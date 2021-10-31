@@ -1,9 +1,10 @@
 # server967
+The API server that provide service to store the videos and create users 
 
 ## Routes
 
 `/users`
-* [/users/ - getAllUsers](server967.md#getAllUsers)
+* [/users/ - getAllUsers](#getAllUsers)
 * [/users/add - addUser](#addUser)
 * [/users/uploads - uploads](#uploads)
 * [/users/userId/:userId - getUser](#getUser)
@@ -12,6 +13,7 @@
 * [/users/login - login](#login)
 
 # getAllUsers
+Fetch all the Users 
 #### `GET` - /users/
 
 ##### Parameters
@@ -26,7 +28,7 @@ let res = await axios({
 
 Response
 ```javascript
-let res = {
+let response.data = [{
     "_id": {
         "$oid": "614c335418eef4acd8447274"
     },
@@ -54,10 +56,11 @@ let res = {
         "filePath": "0001-0200.mp4"
     }],
     "time": 1632383828981
-    }
+    }]
 ```
 
 # addUser
+Add some User
 #### `POST` - /users/add
 
 ##### Parameters
@@ -68,7 +71,7 @@ let res = {
 
 Request
 ```javascript
-let res  await axios({
+let res.data = await axios({
     url: "http://localhost:8000/users/login",
     method: "POST",
     data: {
@@ -87,6 +90,7 @@ let response = {
 ```
 
 # uploads
+Upload a video to the Server
 #### `POST` - /users/uploads
 
 ##### Parameters
@@ -119,6 +123,7 @@ let response = {
 ```
 
 # getUser
+Get a particular User Info
 #### `GET` - /users/userId/:userId
 
 ##### Parameters
@@ -167,6 +172,7 @@ let response = {
 ```
 
 # getPrivateVideo
+Get the private video of some user
 #### `GET` - /users/private-video/:email
 
 ##### Parameters
@@ -216,6 +222,7 @@ let response = {
 
 
 # Login
+Login to the server
 #### `POST` - /users/login
 
 ##### Parameters
@@ -238,9 +245,7 @@ let res  await axios({
 Response
 ```javascript
 let response = {
-    auth_token: {
-        
-    },
+    auth_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzI3NDAzMTEsInVzZXJuYW1lIjoiaHB2MjYwMUBnbWFpbC5jb20iLCJlbWFpbCI6ImhwdjI2MDFAZ21haWwuY29tIiwiaWF0IjoxNjMyNzI1OTExfQ.Xyww9EM0IGyS3kK6MuRGcP0y2JfErzce5i51UINinP8",
     info: {
     "_id": {
         "$oid": "614c335418eef4acd8447274"
