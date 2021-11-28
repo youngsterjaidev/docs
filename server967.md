@@ -1,6 +1,8 @@
 # server967
 The API server that provide service to store the videos and create users 
 
+### Hosted URl - [Server967](https://server967.herokuapp.com/)
+
 ## Routes
 
 `/users`
@@ -21,7 +23,7 @@ Fetch all the Users
 Request
 ```javascript
 let res = await axios({
-   url: "http://localhost:8000/users/"
+   url: "https://server967.herokuapp.com/users/"
    method: "GET"
 })
 ```
@@ -72,7 +74,7 @@ Add some User
 Request
 ```javascript
 let res.data = await axios({
-    url: "http://localhost:8000/users/login",
+    url: "https://server967.herokuapp.com/users/login",
     method: "POST",
     data: {
         email: "test333@gmail.com",
@@ -109,7 +111,7 @@ data.append("isPrivate", false)
 data.append("video", [video])
 
 let res = await axios({
-    url: "http://localhost:8000/users/uploads",
+    url: "https://server967.herokuapp.com/users/uploads",
     method: "POST",
     data: data 
 })
@@ -133,7 +135,7 @@ Get a particular User Info
 Request
 ```javascript
 let res = await axios({
-    url: "http://localhost:8000/users/userId/:userId",
+    url: "https://server967.herokuapp.com/users/userId/:userId",
     method: "GET",
 })
 
@@ -182,7 +184,7 @@ Get the private video of some user
 Request
 ```javascript
 let res = await axios({
-    url: "http://localhost:8000/users/private-video/:email",
+    url: "https://server967.herokuapp.com/users/private-video/:email",
     method: "GET",
 })
 
@@ -233,7 +235,7 @@ Login to the server
 Request
 ```javascript
 let res  await axios({
-    url: "http://localhost:8000/users/login",
+    url: "https://server967.herokuapp.com/users/login",
     method: "POST",
     data: {
         email: "test333@gmail.com",
