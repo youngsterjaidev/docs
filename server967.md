@@ -13,8 +13,9 @@ The API server that provide service to store the videos and create users
 * [/users/private-video/:email - getPrivateVideo](#getPrivateVideo)
 * [/users/videos - getVideos](#getVideos)
 * [/users/login - login](#login)
-* [/azure/uploads - getAzureBlobStorage](#getAzureBlobStorage)
-* [/azure/uploads - postAzureBlobStorage](#postAzureBlobStorage)
+* [/users/azure/uploads - getAzureBlobStorage](#getAzureBlobStorage)
+* [/users/azure/uploads - getAWSS3BucketsList](#getAWSS3BucketsList)
+* [/users/aws/buckets/:bucketName - getCreateAWSS3Bucket](#getCreateAWSS3Bucket)
 
 # getAllUsers
 Fetch all the Users 
@@ -285,6 +286,8 @@ let response = {
 # Azure
 
 ## getAzureBlobStorage
+Get all the list of blob in the Azure blob storage Container
+
 #### `GET` - /users/azure/uploads
 
 ##### Parameters
@@ -396,4 +399,205 @@ let response.data = {
         }
     ]
 }
+```
+
+## postAzureBlobStorage
+Uploading the file to the AZURE blob storage service
+#### `POST` - /users/azure/uploads
+
+##### Parameters
+
+Request
+```javascript
+let res = await axios({
+   url: "https://server967.herokuapp.com/users/azure/uploads"
+   method: "POST"
+})
+```
+
+Response
+```javascript
+let response.data = {
+    mesage: "File Uploaded Successfully"
+}
+```
+
+# AWS (AMAZON Web Services)
+
+## getAWSS3BucketsList
+List all the buckets in AWS S3
+#### `GET` - /users/aws/buckets/
+
+##### Parameters
+
+Request
+```javascript
+let res = await axios({
+   url: "https://server967.herokuapp.com/users/aws/buckets"
+   method: "GET"
+})
+```
+
+Response
+```javascript
+let response.data = [
+        {
+            "Name": "elasticbeanstalk-us-east-1-823978677915",
+            "CreationDate": "2020-11-30T13:47:53.000Z"
+        },
+        {
+            "Name": "infna-ready",
+            "CreationDate": "2022-05-25T07:49:48.000Z"
+        },
+        {
+            "Name": "infna-teset",
+            "CreationDate": "2022-05-25T08:58:57.000Z"
+        },
+        {
+            "Name": "r-ere",
+            "CreationDate": "2022-05-25T18:20:24.000Z"
+        },
+        {
+            "Name": "rando-red",
+            "CreationDate": "2022-05-25T18:19:55.000Z"
+        },
+        {
+            "Name": "random-re",
+            "CreationDate": "2022-05-25T18:19:26.000Z"
+        }
+    ]
+```
+
+## getCreateAWSS3Bucket
+Create a bucket in the AWS S3
+
+#### `GET` - /users/aws/buckets/:bucketName
+
+##### Parameters
+* bucketName (required) 
+
+Request
+```javascript
+let res = await axios({
+   url: "https://server967.herokuapp.com/users/aws/buckets/:bucketName"
+   method: "GET"
+})
+```
+
+Response
+```javascript
+// infna-okay is the bucketName
+let response.data = {
+    Location: "http://infna-okay.s3.amazonaws.com/"
+}
+```
+
+## deleteAWSS3Bucket
+Delete a bucket in the AWS S3
+
+#### `GET` - /users/aws/buckets/:bucketName
+
+##### Parameters
+- bucketName (required) 
+
+Request
+```javascript
+let res = await axios({
+   url: "https://server967.herokuapp.com/users/aws/buckets/:bucketName"
+   method: "DELETE"
+})
+```
+
+Response
+```javascript
+let response.data = {
+    message: "Bucket deleted Successfully"
+}
+```
+
+## getAWSS3BucketObjects
+List alle the objects of a bucket in the AWS S3
+
+#### `GET` - /users/aws/buckets/:bucketName/objects
+
+##### Parameters
+- bucketName (required) 
+
+Request
+```javascript
+let res = await axios({
+   url: "https://server967.herokuapp.com/users/aws/buckets/:bucketName/objects"
+   method: "GET"
+})
+```
+
+Response
+```javascript
+let response.data = [
+    {
+        "Key": "package.json",
+        "LastModified": "2022-05-25T08:14:10.000Z",
+        "ETag": "\"78a6cef94bfdbe82726da49f951a3b56\"",
+        "ChecksumAlgorithm": [],
+        "Size": 294,
+        "StorageClass": "STANDARD",
+        "Owner": {
+            "ID": "13a4c53bacd679aab39f85376ff4b014db7c06a2b1c8f3d7fb78faceb87b2eec"
+        }
+    },
+    {
+        "Key": "page4.png",
+        "LastModified": "2022-05-26T16:43:36.000Z",
+        "ETag": "\"33b6d0bf988f414d0d4dea46f41b0e3a\"",
+        "ChecksumAlgorithm": [],
+        "Size": 26929,
+        "StorageClass": "STANDARD",
+        "Owner": {
+            "ID": "13a4c53bacd679aab39f85376ff4b014db7c06a2b1c8f3d7fb78faceb87b2eec"
+        }
+    },
+    {
+        "Key": "rd.png",
+        "LastModified": "2022-05-26T16:42:25.000Z",
+        "ETag": "\"4d09a1241892e4194c16f6acedecd856\"",
+        "ChecksumAlgorithm": [],
+        "Size": 168067,
+        "StorageClass": "STANDARD",
+        "Owner": {
+            "ID": "13a4c53bacd679aab39f85376ff4b014db7c06a2b1c8f3d7fb78faceb87b2eec"
+        }
+    },
+    {
+        "Key": "xWR6mvVAsMYg2356HUUAuN.jpg",
+        "LastModified": "2022-05-25T16:01:23.000Z",
+        "ETag": "\"8f43dbeaeca61cc0289bae553b9927b8\"",
+        "ChecksumAlgorithm": [],
+        "Size": 285200,
+        "StorageClass": "STANDARD",
+        "Owner": {
+            "ID": "13a4c53bacd679aab39f85376ff4b014db7c06a2b1c8f3d7fb78faceb87b2eec"
+        }
+    }
+]
+```
+
+## uploadAWSS3BucketObject
+List alle the objects of a bucket in the AWS S3
+
+#### `POST` - /users/aws/buckets/:bucketName/upload
+
+##### Parameters
+- bucketName (required) 
+
+Request
+```javascript
+let res = await axios({
+   url: "https://server967.herokuapp.com/users/aws/buckets/:bucketName/objects"
+   method: "GET"
+})
+```
+
+Response
+```javascript
+let response.data = []
 ```
