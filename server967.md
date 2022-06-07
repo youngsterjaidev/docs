@@ -1,7 +1,7 @@
 # server967
 The API server that provide service to store the videos and create users 
 
-### Hosted URl - [Server967](https://server967.herokuapp.com/)
+### Hosted URl - [baas](https://baas0.herokuapp.com/)
 
 ## Routes
 
@@ -26,7 +26,7 @@ Fetch all the Users
 Request
 ```javascript
 let res = await axios({
-   url: "https://server967.herokuapp.com/users/"
+   url: "https://baas0.herokuapp.com/users/"
    method: "GET"
 })
 ```
@@ -77,7 +77,7 @@ Add some User
 Request
 ```javascript
 let res.data = await axios({
-    url: "https://server967.herokuapp.com/users/login",
+    url: "https://baas0.herokuapp.com/users/login",
     method: "POST",
     data: {
         email: "test333@gmail.com",
@@ -114,7 +114,7 @@ data.append("isPrivate", false)
 data.append("video", [video])
 
 let res = await axios({
-    url: "https://server967.herokuapp.com/users/uploads",
+    url: "https://baas0.herokuapp.com/users/uploads",
     method: "POST",
     data: data 
 })
@@ -138,7 +138,7 @@ Get a particular User Info
 Request
 ```javascript
 let res = await axios({
-    url: "https://server967.herokuapp.com/users/userId/:userId",
+    url: "https://baas0.herokuapp.com/users/userId/:userId",
     method: "GET",
 })
 
@@ -187,7 +187,7 @@ Get the private video of some user
 Request
 ```javascript
 let res = await axios({
-    url: "https://server967.herokuapp.com/users/private-video/:email",
+    url: "https://baas0.herokuapp.com/users/private-video/:email",
     method: "GET",
 })
 
@@ -238,7 +238,7 @@ Login to the server
 Request
 ```javascript
 let res  await axios({
-    url: "https://server967.herokuapp.com/users/login",
+    url: "https://baas0.herokuapp.com/users/login",
     method: "POST",
     data: {
         email: "test333@gmail.com",
@@ -295,7 +295,7 @@ Get all the list of blob in the Azure blob storage Container
 Request
 ```javascript
 let res = await axios({
-   url: "https://server967.herokuapp.com/users/azure/uploads"
+   url: "https://baas0.herokuapp.com/users/azure/uploads"
    method: "GET"
 })
 ```
@@ -410,7 +410,7 @@ Uploading the file to the AZURE blob storage service
 Request
 ```javascript
 let res = await axios({
-   url: "https://server967.herokuapp.com/users/azure/uploads"
+   url: "https://baas0.herokuapp.com/users/azure/uploads"
    method: "POST"
 })
 ```
@@ -433,7 +433,7 @@ List all the buckets in AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://server967.herokuapp.com/users/aws/buckets"
+   url: "https://baas0.herokuapp.com/users/aws/buckets"
    method: "GET"
 })
 ```
@@ -479,7 +479,7 @@ Create a bucket in the AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://server967.herokuapp.com/users/aws/buckets/:bucketName"
+   url: "https://baas0.herokuapp.com/users/aws/buckets/:bucketName"
    method: "GET"
 })
 ```
@@ -503,7 +503,7 @@ Delete a bucket in the AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://server967.herokuapp.com/users/aws/buckets/:bucketName"
+   url: "https://baas0.herokuapp.com/users/aws/buckets/:bucketName"
    method: "DELETE"
 })
 ```
@@ -526,7 +526,7 @@ List alle the objects of a bucket in the AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://server967.herokuapp.com/users/aws/buckets/:bucketName/objects"
+   url: "https://baas0.herokuapp.com/users/aws/buckets/:bucketName/objects"
    method: "GET"
 })
 ```
@@ -592,7 +592,7 @@ List alle the objects of a bucket in the AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://server967.herokuapp.com/users/aws/buckets/:bucketName/objects"
+   url: "https://baas0.com/users/aws/buckets/:bucketName/objects"
    method: "GET"
 })
 ```
