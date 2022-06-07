@@ -1,4 +1,4 @@
-# server967
+# Baas
 The API server that provide service to store the videos and create users 
 
 ### Hosted URl - [baas](https://baas0.herokuapp.com/)
