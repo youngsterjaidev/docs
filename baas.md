@@ -16,7 +16,7 @@ The API server that provide service to store the videos and create users
 * [/users/azure/uploads - getAzureBlobStorage](#getAzureBlobStorage)
 * [/users/azure/uploads - getAWSS3BucketsList](#getAWSS3BucketsList)
 * [/users/aws/buckets/:bucketName - getCreateAWSS3Bucket](#getCreateAWSS3Bucket)
-* [users/aws/buckets].get(getAWSS3BucketsList)
+* [users/aws/buckets - getAWSS3BucketsList](#getAWSS3BucketsList)
 * [/aws/buckets/:bucketName - getCreateAWSS3Bucket](#getCreateAWSS3Bucket)
 * [/aws/buckets/:bucketName - deleteAWSS3Bucket](#deleteAWSS3Bucket)
 * [/aws/buckets/:bucketName/objects](#getAWSS3BucketObjects)
