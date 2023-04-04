@@ -1,7 +1,7 @@
 # Baas
 The API server that provide service to store the videos and create users 
 
-### Hosted URl - [baas](https://baas0.herokuapp.com/)
+### Hosted URl - [baas](https://blackbaas.vercel.app/)
 
 ## Routes
 
@@ -31,7 +31,7 @@ Fetch all the Users
 Request
 ```javascript
 let res = await axios({
-   url: "https://baas0.herokuapp.com/users/"
+   url: "https://blackbaas.vercel.app/users/"
    method: "GET"
 })
 ```
@@ -82,7 +82,7 @@ Add some User
 Request
 ```javascript
 let res.data = await axios({
-    url: "https://baas0.herokuapp.com/users/login",
+    url: "https://blackbaas.vercel.app/users/login",
     method: "POST",
     data: {
         email: "test333@gmail.com",
@@ -119,7 +119,7 @@ data.append("isPrivate", false)
 data.append("video", [video])
 
 let res = await axios({
-    url: "https://baas0.herokuapp.com/users/uploads",
+    url: "https://blackbaas.vercel.app/users/uploads",
     method: "POST",
     data: data 
 })
@@ -143,7 +143,7 @@ Get a particular User Info
 Request
 ```javascript
 let res = await axios({
-    url: "https://baas0.herokuapp.com/users/userId/:userId",
+    url: "https://blackbaas.vercel.app/users/userId/:userId",
     method: "GET",
 })
 
@@ -192,7 +192,7 @@ Get the private video of some user
 Request
 ```javascript
 let res = await axios({
-    url: "https://baas0.herokuapp.com/users/private-video/:email",
+    url: "https://blackbaas.vercel.app/users/private-video/:email",
     method: "GET",
 })
 
@@ -243,7 +243,7 @@ Login to the server
 Request
 ```javascript
 let res  await axios({
-    url: "https://baas0.herokuapp.com/users/login",
+    url: "https://blackbaas.vercel.app/users/login",
     method: "POST",
     data: {
         email: "test333@gmail.com",
@@ -300,7 +300,7 @@ Get all the list of blob in the Azure blob storage Container
 Request
 ```javascript
 let res = await axios({
-   url: "https://baas0.herokuapp.com/users/azure/uploads"
+   url: "https://blackbaas.vercel.app/users/azure/uploads"
    method: "GET"
 })
 ```
@@ -415,7 +415,7 @@ Uploading the file to the AZURE blob storage service
 Request
 ```javascript
 let res = await axios({
-   url: "https://baas0.herokuapp.com/users/azure/uploads"
+   url: "https://blackbaas.vercel.app/users/azure/uploads"
    method: "POST"
 })
 ```
@@ -438,7 +438,7 @@ List all the buckets in AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://baas0.herokuapp.com/users/aws/buckets"
+   url: "https://blackbaas.vercel.app/users/aws/buckets"
    method: "GET"
 })
 ```
@@ -484,7 +484,7 @@ Create a bucket in the AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://baas0.herokuapp.com/users/aws/buckets/:bucketName"
+   url: "https://blackbaas.vercel.app/users/aws/buckets/:bucketName"
    method: "GET"
 })
 ```
@@ -508,7 +508,7 @@ Delete a bucket in the AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://baas0.herokuapp.com/users/aws/buckets/:bucketName"
+   url: "https://blackbaas.vercel.app/users/aws/buckets/:bucketName"
    method: "DELETE"
 })
 ```
@@ -531,7 +531,7 @@ List alle the objects of a bucket in the AWS S3
 Request
 ```javascript
 let res = await axios({
-   url: "https://baas0.herokuapp.com/users/aws/buckets/:bucketName/objects"
+   url: "https://blackbaas.vercel.app/users/aws/buckets/:bucketName/objects"
    method: "GET"
 })
 ```
