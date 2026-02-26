@@ -1,11 +1,33 @@
-Title:
-Screen Name + Feature
+name: UI Task
+description: React Native UI implementation task
+title: "[UI]: "
+labels: ["UI"]
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What needs to be built
+    validations:
+      required: true
 
-Sections:
-- Objective
-- UI Components
-- Navigation Logic
-- API Needed
-- Edge Cases
-- Acceptance Criteria
-- Definition of Done
+  - type: textarea
+    id: components
+    attributes:
+      label: Components
+      description: UI components required
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Steps
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of Done
